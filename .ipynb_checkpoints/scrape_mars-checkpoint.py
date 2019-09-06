@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -18,7 +18,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -41,7 +41,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -52,7 +52,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -70,20 +70,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "'The rover recently drilled two samples, and both showed the highest levels of clay ever found during the mission.'"
-      ]
-     },
-     "execution_count": 5,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "# Scrape the NASA Mars News Site and collect the latest News Title and Paragraph Text.\n",
     "# Assign the text to variables that you can reference later.\n",
@@ -106,20 +95,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "'https://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA07137_ip.jpg'"
-      ]
-     },
-     "execution_count": 7,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "# Visit the url for JPL Featured Space Image https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars\n",
     "# Use splinter to navigate the site and find the image url for the current Featured Mars Image and assign the url string to a variable called featured_image_url.\n",
@@ -127,7 +105,7 @@
     "# Make sure to save a complete url string for this image.\n",
     "\n",
     "executable_path = {'executable_path': 'chromedriver.exe'}\n",
-    "jpl_browser = Browser('chrome', **executable_path, headless=False)\n",
+    "browser = Browser('chrome', **executable_path, headless=False)\n",
     "\n",
     "jpl_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'\n",
     "jpl_browser.visit(jpl_url)\n",
@@ -148,7 +126,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -162,7 +140,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -173,20 +151,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "'InSight sol 258 (2019-08-18) low -100.0ºC (-148.1ºF) high -26.2ºC (-15.2ºF)\\nwinds from the SSE at 5.3 m/s (11.9 mph) gusting to 16.8 m/s (37.6 mph)\\npressure at 7.60 hPapic.twitter.com/5nCVjcsmlZ'"
-      ]
-     },
-     "execution_count": 10,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "# Save the tweet text for the weather report as a variable called mars_weather.\n",
     "tweets = twitter_soup.find('div', class_='js-tweet-text-container')\n",
@@ -205,36 +172,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "[  Mars - Earth Comparison             Mars            Earth\n",
-       " 0               Diameter:         6,779 km        12,742 km\n",
-       " 1                   Mass:  6.39 × 10^23 kg  5.97 × 10^24 kg\n",
-       " 2                  Moons:                2                1\n",
-       " 3      Distance from Sun:   227,943,824 km   149,598,262 km\n",
-       " 4         Length of Year:   687 Earth days      365.24 days\n",
-       " 5            Temperature:    -153 to 20 °C      -88 to 58°C,\n",
-       "                       0                              1\n",
-       " 0  Equatorial Diameter:                       6,792 km\n",
-       " 1       Polar Diameter:                       6,752 km\n",
-       " 2                 Mass:  6.39 × 10^23 kg (0.11 Earths)\n",
-       " 3                Moons:            2 (Phobos & Deimos)\n",
-       " 4       Orbit Distance:       227,943,824 km (1.38 AU)\n",
-       " 5         Orbit Period:           687 days (1.9 years)\n",
-       " 6  Surface Temperature:                   -87 to -5 °C\n",
-       " 7         First Record:              2nd millennium BC\n",
-       " 8          Recorded By:           Egyptian astronomers]"
-      ]
-     },
-     "execution_count": 11,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "# Visit the Mars Facts webpage @ https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars\n",
     "\n",
@@ -245,77 +185,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/html": [
-       "<div>\n",
-       "<style scoped>\n",
-       "    .dataframe tbody tr th:only-of-type {\n",
-       "        vertical-align: middle;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe tbody tr th {\n",
-       "        vertical-align: top;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe thead th {\n",
-       "        text-align: right;\n",
-       "    }\n",
-       "</style>\n",
-       "<table border=\"1\" class=\"dataframe\">\n",
-       "  <thead>\n",
-       "    <tr style=\"text-align: right;\">\n",
-       "      <th></th>\n",
-       "      <th>Mars</th>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Fact</th>\n",
-       "      <th></th>\n",
-       "    </tr>\n",
-       "  </thead>\n",
-       "  <tbody>\n",
-       "    <tr>\n",
-       "      <th>Diameter:</th>\n",
-       "      <td>6,779 km</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Mass:</th>\n",
-       "      <td>6.39 × 10^23 kg</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Moons:</th>\n",
-       "      <td>2</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Distance from Sun:</th>\n",
-       "      <td>227,943,824 km</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Length of Year:</th>\n",
-       "      <td>687 Earth days</td>\n",
-       "    </tr>\n",
-       "  </tbody>\n",
-       "</table>\n",
-       "</div>"
-      ],
-      "text/plain": [
-       "                               Mars\n",
-       "Fact                               \n",
-       "Diameter:                  6,779 km\n",
-       "Mass:               6.39 × 10^23 kg\n",
-       "Moons:                            2\n",
-       "Distance from Sun:   227,943,824 km\n",
-       "Length of Year:      687 Earth days"
-      ]
-     },
-     "execution_count": 12,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "# use Pandas to scrape the table containing facts about the planet including Diameter, Mass, etc.\n",
     "mars_facts_df = tables[0]\n",
@@ -329,20 +201,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "'<table border=\"1\" class=\"dataframe\">  <thead>    <tr style=\"text-align: right;\">      <th></th>      <th>Mars</th>    </tr>    <tr>      <th>Fact</th>      <th></th>    </tr>  </thead>  <tbody>    <tr>      <th>Diameter:</th>      <td>6,779 km</td>    </tr>    <tr>      <th>Mass:</th>      <td>6.39 × 10^23 kg</td>    </tr>    <tr>      <th>Moons:</th>      <td>2</td>    </tr>    <tr>      <th>Distance from Sun:</th>      <td>227,943,824 km</td>    </tr>    <tr>      <th>Length of Year:</th>      <td>687 Earth days</td>    </tr>    <tr>      <th>Temperature:</th>      <td>-153 to 20 °C</td>    </tr>  </tbody></table>'"
-      ]
-     },
-     "execution_count": 13,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "# Use Pandas to convert the data to a HTML table string.\n",
     "html_table = mars_facts_df.to_html()\n",
@@ -360,7 +221,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
